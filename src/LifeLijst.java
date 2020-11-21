@@ -4,13 +4,13 @@ import java.util.ArrayList;
 public class LifeLijst {
     public static void main(String[] args) {
         int[][] table = new int[10][10];
-        table[0][0] = 1;
-        table[2][2] = 1;
+        table[1][1] = 1;
+        table[1][2] = 1;
         table[2][1] = 1;
-        table[5][5] = 1;
-        System.out.println(nextgeneration(table)[5][5]);
-        System.out.println(nextgeneration(table)[0][0]);
-        System.out.println(nextgeneration(table)[2][1]);
+        table[2][2] = 1;
+//        System.out.println(nextgeneration(table)[5][5]);
+//        System.out.println(nextgeneration(table)[0][0]);
+        System.out.println(nextgeneration(table)[2][2]);
 
 
     }
