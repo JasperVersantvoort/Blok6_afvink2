@@ -26,7 +26,7 @@ public class Gui extends JFrame implements ActionListener {
         window.add(start_button);
         start_button.addActionListener(this);
 
-        stop_button = new JButton("Stop");
+        stop_button = new JButton("Exit");
         window.add(stop_button);
         stop_button.addActionListener(this);
 
@@ -48,19 +48,31 @@ public class Gui extends JFrame implements ActionListener {
         table[1][0] = 1;
         table[0][1] = 1;
 
-        table[9][9] = 1;
+        table[6][7] = 1;
         table[8][8] = 1;
         table[7][7] = 1;
         table[8][7] = 1;
         table[9][7] = 1;
         table[7][9] = 1;
 
+        table[4][6] = 1;
+        table[5][6] = 1;
+        table[3][7] = 1;
+
+
+        table[0][7] = 1;
+        table[0][9] = 1;
+        table[1][8] = 1;
+        table[2][7] = 1;
+        table[2][9] = 1;
+
 
         switch (e.getActionCommand()) {
             case "Start" -> {
                 start = true;
                 System.out.println("Start");
-                while (start) {
+                for (int x = 0; x < 50; x++) {
+                    System.out.println("while");
                     for (int i = 0; i < 10; i++) {
                         for (int k = 0; k < 10; k++) {
                             if (table[i][k] == 1) {
@@ -70,7 +82,8 @@ public class Gui extends JFrame implements ActionListener {
                             }
                             tekenveld.fillRect(i * 50, k * 50, 50, 50);
                         }
-                    }table = nextgen.GetNext(table);
+                    }
+                    table = nextgen.GetNext(table);
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException interruptedException) {
@@ -78,9 +91,11 @@ public class Gui extends JFrame implements ActionListener {
                     }
                 }
             }
-            case "Stop" -> {
-                start = false;
-                System.out.println("Stop");
+            case "Exit" -> {
+                System.out.println("Exit");
+                this.dispose();
+
+
             }
         }
     }
