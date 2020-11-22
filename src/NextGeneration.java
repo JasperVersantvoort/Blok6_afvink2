@@ -44,7 +44,6 @@ public class NextGeneration {
                     }
             } else {
                     if (s ==3) {
-                        System.out.println("new 1");
                         next_table[i][k] = 1;
                     }
 
