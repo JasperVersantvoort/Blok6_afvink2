@@ -1,21 +1,7 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+public class NextGeneration {
 
-public class LifeLijst {
-    public static void main(String[] args) {
-        int[][] table = new int[10][10];
-        table[1][1] = 1;
-        table[1][2] = 1;
-        table[2][1] = 1;
-        table[2][2] = 1;
-//        System.out.println(nextgeneration(table)[5][5]);
-//        System.out.println(nextgeneration(table)[0][0]);
-        System.out.println(nextgeneration(table)[2][2]);
-
-
-    }
-
-    public static int[][] nextgeneration(int[][] table) {
+    public int[][] GetNext(int[][] table) {
+        int[][] next_table = new int[10][10];
         int s = 0;
         for (int i = 0; i < 10; i++) {
             for (int k = 0; k < 10; k++) {
@@ -52,19 +38,20 @@ public class LifeLijst {
 
                 if (table[i][k] == 1) {
                     if (s == 2 || s==3) {
-                        table[i][k] = 1;
+                        next_table[i][k] = 1;
                     }else{
-                        table[i][k] = 0;
+                        next_table[i][k] = 0;
                     }
             } else {
                     if (s ==3) {
-                        table[i][k] = 1;
+                        System.out.println("new 1");
+                        next_table[i][k] = 1;
                     }
 
                     }
                 }
 
             }
-        return table;
+        return next_table;
     }
 }
